@@ -4,8 +4,6 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import ado.edu.itla.sosapp.MainActivity;
-
 public class DbConexion extends SQLiteOpenHelper {
 
     private static String NOMBRE_BASEDATOS = "sosapp.db";
@@ -18,7 +16,7 @@ public class DbConexion extends SQLiteOpenHelper {
             "`email`TEXT NOT NULL" +
             ")";
 
-    public DbConexion(MainActivity mainActivity, String db, Context context, int i) {
+    public DbConexion(Context context) {
         super(context, NOMBRE_BASEDATOS, null, VERSION_BASEDATOS);
     }
 
