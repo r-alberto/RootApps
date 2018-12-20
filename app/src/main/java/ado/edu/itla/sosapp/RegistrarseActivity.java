@@ -1,10 +1,9 @@
-package ado.edu.itla.sosapp.entidad;
+package ado.edu.itla.sosapp;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 
-import ado.edu.itla.sosapp.MainActivity;
-import ado.edu.itla.sosapp.R;
+import ado.edu.itla.sosapp.entidad.Usuario;
 import ado.edu.itla.sosapp.repositorio.usuario.UsuarioRepositorio;
 import ado.edu.itla.sosapp.repositorio.usuario.UsuarioRepositorioimpl;
 

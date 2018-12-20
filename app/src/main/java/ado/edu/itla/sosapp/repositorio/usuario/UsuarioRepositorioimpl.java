@@ -39,27 +39,25 @@ public class UsuarioRepositorioimpl implements UsuarioRepositorio {
     public Usuario buscar(String email) {
 
         SQLiteDatabase db = dbConexion.getReadableDatabase();
-        Cursor cursor = null;
+
         Usuario usuario = null;
-        String nombre ="";
+
         try {
-            cursor = db.query("usurio",null,"email=?", new String[] {email}, null,null,null);
+            Cursor cursor = db.query("usuario",null,"email=?", new String[] {email}, null,null,null);
 
             if (cursor .moveToNext()){
-                nombre =
-                        cursor.getString(cursor.getColumnIndex(email));
                 usuario = new Usuario();
 
                 usuario.setId(cursor.getInt(cursor.getColumnIndex("id")));
                 usuario.setNombre(cursor.getString(cursor.getColumnIndex("nombre")));
                 usuario.setPassword(cursor.getString(cursor.getColumnIndex("password")));
-                usuario.setEmail(cursor.getString(cursor.getColumnIndex("email")));
+                usuario.setEmail(email);
 
                 cursor.close();
             }
         }
         catch (Exception e){}
 
-        return null;
+        return usuario;
     }
 }
